@@ -48,6 +48,35 @@ Given historical customer data, can we identify customers at high risk of churn 
 
 ---
 
+## Results
+
+The final XGBoost model achieved:
+- ROC-AUC: 0.83
+- PR-AUC: 0.64
+
+These results indicate strong ranking performance on an imbalanced churn dataset,
+enabling effective prioritization of high-risk customers.
+
+## Key Drivers of Churn (SHAP Analysis)
+
+SHAP feature attribution shows that churn risk is primarily driven by:
+
+- High monthly charges relative to tenure, indicating poor perceived value early in the customer lifecycle
+- Month-to-month contract status, reflecting low switching costs
+- Short customer tenure, particularly within the first year
+- Lack of online security and technical support services
+- Higher overall billing amounts combined with low contractual commitment
+
+These results align with known churn dynamics in subscription businesses and provide
+clear levers for targeted retention strategies.
+
+
+## Business Impact
+By tuning the decision threshold, the model can target approximately 25–30% of customers
+while capturing over 75% of churn risk, allowing retention teams to focus incentives
+where they are most cost-effective.
+
+
 ## Key Business Insights
 - Customers on month-to-month contracts exhibit significantly higher churn rates
 - Low-tenure customers with high monthly charges are at greatest risk
